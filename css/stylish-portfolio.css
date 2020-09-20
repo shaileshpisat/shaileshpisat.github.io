@@ -373,3 +373,13 @@ a:hover, a:focus, a:active {
 .text-secondary {
   color: #ecb807 !important;
 }
+
+/* New Additions / Changes */
+
+.initText{
+  display: none;
+}
+
+.portfolio-item:hover .initText {
+  display: block;
+}
