@@ -38,7 +38,7 @@ window.PROFILE_DATA = {
       icon: "fa-twitter",
       url: "https://twitter.com/"
     }
-  },
+  ],
   profile: [
     {
       title: "Base",
