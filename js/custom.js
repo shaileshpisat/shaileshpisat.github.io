@@ -204,7 +204,65 @@
 			'</div>';
 	}
 
-	function applyProfileData(data) {
+	function renderBlogFeatured(item) {
+		if (!item) {
+			return '';
+		}
+
+		return '' +
+			'<article class="blog-featured-card">' +
+				'<div class="blog-featured-media">' +
+					'<img class="blog-featured-image" src="' + item.image + '" alt="' + item.title + '">' +
+				'</div>' +
+				'<div class="blog-featured-content">' +
+					'<div class="blog-post-meta open-sans-font">' +
+						'<span>' + item.category + '</span>' +
+						'<span>' + item.date + '</span>' +
+						'<span>' + item.readTime + '</span>' +
+					'</div>' +
+					'<h2 class="poppins-font">' + item.title + '</h2>' +
+					'<p class="open-sans-font">' + item.excerpt + '</p>' +
+					'<a class="button blog-post-link" href="' + item.link + '">' +
+						'<span class="button-text">' + (item.linkLabel || 'Read More') + '</span>' +
+						'<span class="button-icon fa fa-arrow-right"></span>' +
+					'</a>' +
+				'</div>' +
+			'</article>';
+	}
+
+	function renderBlogPosts(items) {
+		return items.map(function(item) {
+			return '' +
+				'<article class="blog-card">' +
+					'<a class="blog-card-media" href="' + item.link + '">' +
+						'<img class="blog-card-image" src="' + item.image + '" alt="' + item.title + '">' +
+					'</a>' +
+					'<div class="blog-card-body">' +
+						'<div class="blog-post-meta open-sans-font">' +
+							'<span>' + item.category + '</span>' +
+							'<span>' + item.date + '</span>' +
+							'<span>' + item.readTime + '</span>' +
+						'</div>' +
+						'<h3 class="poppins-font"><a href="' + item.link + '">' + item.title + '</a></h3>' +
+						'<p class="open-sans-font">' + item.excerpt + '</p>' +
+						'<a class="blog-inline-link open-sans-font" href="' + item.link + '">Read article</a>' +
+					'</div>' +
+				'</article>';
+		}).join('');
+	}
+
+	function renderBlogPlatforms(items) {
+		return items.map(function(item) {
+			var iconMarkup = item.icon ? '<i class="fa ' + item.icon + '"></i>' : '';
+			return '' +
+				'<a class="blog-platform-chip open-sans-font" href="' + item.url + '" target="_blank" rel="noopener noreferrer">' +
+					iconMarkup +
+					'<span>' + item.label + '</span>' +
+				'</a>';
+		}).join('');
+	}
+
+	function applyPageData(data) {
 		if (!data) {
 			return;
 		}
@@ -294,9 +352,23 @@
 				});
 			}
 		}
+
+		if ($('#blog-featured-card').length) {
+			if (data.featured) {
+				$('#blog-featured-card').html(renderBlogFeatured(data.featured));
+			}
+
+			if (Array.isArray(data.posts) && $('#blog-posts-grid').length) {
+				$('#blog-posts-grid').html(renderBlogPosts(data.posts));
+			}
+
+			if (Array.isArray(data.platforms) && $('#blog-platforms').length) {
+				$('#blog-platforms').html(renderBlogPlatforms(data.platforms));
+			}
+		}
 	}
 
-	function loadProfileData() {
+	function loadPageData() {
 		var isAboutPage = $('#profile-name').length ||
 			$('#profile-info-list').length ||
 			$('#profile-stats-grid').length ||
@@ -309,18 +381,25 @@
 			$('#portfolio-products-grid').length ||
 			$('#portfolio-clients-grid').length ||
 			$('#portfolio-tools-grid').length;
+		var isBlogPage = $('#blog-featured-card').length ||
+			$('#blog-posts-grid').length;
 
-		if (!isAboutPage && !isContactPage && !isPortfolioPage) {
+		if (!isAboutPage && !isContactPage && !isPortfolioPage && !isBlogPage) {
 			return;
 		}
 
 		if ((isAboutPage || isContactPage) && window.PROFILE_DATA) {
-			applyProfileData(window.PROFILE_DATA);
+			applyPageData(window.PROFILE_DATA);
 			return;
 		}
 
 		if (isPortfolioPage && window.PORTFOLIO_DATA) {
-			applyProfileData(window.PORTFOLIO_DATA);
+			applyPageData(window.PORTFOLIO_DATA);
+			return;
+		}
+
+		if (isBlogPage && window.BLOG_DATA) {
+			applyPageData(window.BLOG_DATA);
 			return;
 		}
 
@@ -347,7 +426,7 @@
 		/*  PROFILE DATA
         /* ----------------------------------------------------------- */
 
-		loadProfileData();
+		loadPageData();
 
 		/* ----------------------------------------------------------- */
 		/*  PORTFOLIO GALLERY
