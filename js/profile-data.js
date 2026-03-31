@@ -64,21 +64,25 @@ window.PROFILE_DATA = {
   stats: [
     {
       value: "14",
+      suffix: "+",
       label: "years of",
       labelAccent: "experience"
     },
     {
       value: "3",
+      suffix: "+",
       label: "products",
       labelAccent: "managed"
     },
     {
       value: "15",
+      suffix: "%",
       label: "annual growth",
       labelAccent: "focus"
     },
     {
       value: "4",
+      suffix: "+",
       label: "core strengths",
       labelAccent: "combined"
     }

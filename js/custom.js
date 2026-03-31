@@ -23,10 +23,14 @@
 	function renderProfileStats(items) {
 		return items.map(function(item, index) {
 			var marginClass = index < 2 ? ' with-margin' : '';
+			var statValue = item.value || '';
+			if (item.suffix) {
+				statValue += '<sup>' + item.suffix + '</sup>';
+			}
 			return '' +
 				'<div class="col-6">' +
 					'<div class="box-stats' + marginClass + '">' +
-						'<h3 class="poppins-font position-relative">' + item.value + '</h3>' +
+						'<h3 class="poppins-font position-relative">' + statValue + '</h3>' +
 						'<p class="open-sans-font m-0 position-relative text-uppercase">' + item.label + ' <span class="d-block">' + item.labelAccent + '</span></p>' +
 					'</div>' +
 				'</div>';
