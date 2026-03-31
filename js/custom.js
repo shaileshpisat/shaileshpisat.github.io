@@ -14,7 +14,6 @@
 		$('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 	}
 
-<<<<<<< HEAD
 	function renderProfileList(items) {
 		return items.map(function(item) {
 			return '<li><span class="title">' + item.title + '</span><span class="value">' + item.value + '</span></li>';
@@ -105,8 +104,6 @@
 			});
 	}
 
-=======
->>>>>>> ddabfe2ccf39f063f0981d83fef0bcae2566ce82
 	$(document).ready(function() {
 
 		/* ----------------------------------------------------------- */
@@ -124,15 +121,12 @@
 		$(".revealator-delay1").addClass('no-transform');
 
 		/* ----------------------------------------------------------- */
-<<<<<<< HEAD
 		/*  PROFILE DATA
         /* ----------------------------------------------------------- */
 
 		loadProfileData();
 
 		/* ----------------------------------------------------------- */
-=======
->>>>>>> ddabfe2ccf39f063f0981d83fef0bcae2566ce82
 		/*  PORTFOLIO GALLERY
         /* ----------------------------------------------------------- */
 
