@@ -1,0 +1,83 @@
+{
+  "name": "Shailesh Pisat",
+  "location": "Mumbai, India",
+  "focus": "Project Management, Automation, AI Workflows, Notion Systems",
+  "experienceSummary": "14+ years across delivery, operations, and product execution",
+  "languages": "English, Marathi, Hindi",
+  "availability": "Open to consulting and project-based collaborations",
+  "resumeFile": "Resume - Shailesh Pisat.pdf",
+  "profile": [
+    {
+      "title": "Base",
+      "value": "Mumbai, India"
+    },
+    {
+      "title": "Focus",
+      "value": "Project Management, Automation, AI Workflows, Notion Systems"
+    },
+    {
+      "title": "Experience",
+      "value": "14+ years across delivery, operations, and product execution"
+    },
+    {
+      "title": "Languages",
+      "value": "English, Marathi, Hindi"
+    },
+    {
+      "title": "Availability",
+      "value": "Open to consulting and project-based collaborations"
+    }
+  ],
+  "stats": [
+    {
+      "value": "14",
+      "label": "years of",
+      "labelAccent": "experience"
+    },
+    {
+      "value": "3",
+      "label": "products",
+      "labelAccent": "managed"
+    },
+    {
+      "value": "15",
+      "label": "annual growth",
+      "labelAccent": "focus"
+    },
+    {
+      "value": "4",
+      "label": "core strengths",
+      "labelAccent": "combined"
+    }
+  ],
+  "skills": [
+    "Project Management",
+    "Stakeholder Management",
+    "Workflow Automation",
+    "AI Workflows",
+    "Notion Systems",
+    "Product Operations",
+    "Delivery Planning",
+    "Cross-functional Coordination"
+  ],
+  "experience": [
+    {
+      "period": "Current",
+      "title": "Product & Delivery Leadership",
+      "place": "Multi-product environment",
+      "description": "Managing active products, aligning teams, and improving execution through better planning, communication, and operational systems."
+    },
+    {
+      "period": "Recent Focus",
+      "title": "Automation & Process Design",
+      "place": "Workflow improvement",
+      "description": "Introducing automation into recurring delivery and operational tasks to reduce friction, save time, and improve consistency."
+    },
+    {
+      "period": "Ongoing",
+      "title": "AI & Notion Systems",
+      "place": "Practical experimentation",
+      "description": "Building practical systems for visibility, documentation, coordination, and AI-assisted workflows teams can actually use."
+    }
+  ]
+}
