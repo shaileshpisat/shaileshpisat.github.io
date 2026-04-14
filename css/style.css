@@ -450,6 +450,7 @@ body.light hr.separator {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     transition: .3s;
     margin: 20px 0;
     border-radius: 50%;
@@ -481,7 +482,7 @@ body.light hr.separator {
     height: 50px;
   }
 
-  .header .icon-box i.fa {
+  .header .icon-box i {
     position: absolute;
     pointer-events: none;
   }
