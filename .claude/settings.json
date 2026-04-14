@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.producthunt.com)"
+      "WebFetch(domain:www.producthunt.com)",
+      "Bash(node -e ':*)"
     ]
   }
 }

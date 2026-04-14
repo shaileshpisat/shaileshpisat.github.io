@@ -57,7 +57,7 @@
 			return '' +
 				'<div class="about-experience-item">' +
 					'<div class="icon">' +
-						'<i class="fa fa-briefcase"></i>' +
+						'<i class="fa-solid fa-briefcase"></i>' +
 					'</div>' +
 					'<span class="time open-sans-font text-uppercase">' + item.period + '</span>' +
 					'<h5 class="poppins-font text-uppercase">' + item.title + ' <span class="place open-sans-font">' + item.place + '</span></h5>' +
@@ -80,7 +80,7 @@
 				linkMarkup =
 					'<a class="button portfolio-card-link" href="' + item.link + '">' +
 						'<span class="button-text">' + (item.linkLabel || 'View Project') + '</span>' +
-						'<span class="button-icon fa fa-arrow-right"></span>' +
+						'<span class="button-icon fa-solid fa-arrow-right"></span>' +
 					'</a>';
 			}
 
@@ -141,7 +141,7 @@
 				linkMarkup =
 					'<a class="button portfolio-card-link" href="' + item.link + '">' +
 						'<span class="button-text">' + (item.linkLabel || 'View Project') + '</span>' +
-						'<span class="button-icon fa fa-arrow-right"></span>' +
+						'<span class="button-icon fa-solid fa-arrow-right"></span>' +
 					'</a>';
 			}
 
@@ -228,7 +228,7 @@
 					'<p class="open-sans-font">' + item.excerpt + '</p>' +
 					'<a class="button blog-post-link" href="' + item.link + '">' +
 						'<span class="button-text">' + (item.linkLabel || 'Read More') + '</span>' +
-						'<span class="button-icon fa fa-arrow-right"></span>' +
+						'<span class="button-icon fa-solid fa-arrow-right"></span>' +
 					'</a>' +
 				'</div>' +
 			'</article>';
@@ -257,7 +257,7 @@
 
 	function renderBlogPlatforms(items) {
 		return items.map(function(item) {
-			var iconMarkup = item.icon ? '<i class="fa ' + item.icon + '"></i>' : '';
+			var iconMarkup = item.icon ? '<i class="' + item.icon + '"></i>' : '';
 			return '' +
 				'<a class="blog-platform-chip open-sans-font" href="' + item.url + '" target="_blank" rel="noopener noreferrer">' +
 					iconMarkup +
@@ -346,14 +346,17 @@
 				$('#contact-location-text').text(data.location);
 			}
 
-			if (Array.isArray(data.socialLinks)) {
-				data.socialLinks.forEach(function(item) {
-					var key = item.label.toLowerCase();
-					var selector = '#contact-social-' + key;
-					if ($(selector).length) {
-						$(selector).attr('href', item.url);
-					}
-				});
+			if (Array.isArray(data.socialLinks) && $('#contact-social-links').length) {
+				var socialHTML = data.socialLinks.map(function(item) {
+					var key = item.label.toLowerCase().replace(/[^a-z0-9]/g, '');
+					return '<a class="button button-ghost contact-social-link" id="contact-social-' + key + '"' +
+						' href="' + item.url + '" target="_blank" rel="noopener"' +
+						' aria-label="' + item.label + '" title="' + item.label + '">' +
+						'<i class="' + item.icon + '"></i>' +
+						'<span class="open-sans-font">' + item.label + '</span>' +
+						'</a>';
+				}).join('');
+				$('#contact-social-links').html(socialHTML);
 			}
 		}
 

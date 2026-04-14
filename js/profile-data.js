@@ -15,28 +15,28 @@ window.PROFILE_DATA = {
   socialLinks: [
     {
       label: "LinkedIn",
-      icon: "fa-linkedin",
-      url: "https://www.linkedin.com/"
+      icon: "fa-brands fa-linkedin",
+      url: "https://www.linkedin.com/in/shaileshpisat"
     },
     {
       label: "GitHub",
-      icon: "fa-github",
-      url: "https://github.com/"
+      icon: "fa-brands fa-github",
+      url: "https://github.com/shaileshpisat"
     },
     {
       label: "Facebook",
-      icon: "fa-facebook",
-      url: "https://facebook.com/"
+      icon: "fa-brands fa-facebook",
+      url: "https://www.facebook.com/shaileshpsat/"
     },
     {
       label: "Instagram",
-      icon: "fa-instagram",
-      url: "https://instagram.com/"
+      icon: "fa-brands fa-instagram",
+      url: "https://www.instagram.com/shailesh.pisat/"
     },
     {
-      label: "Twitter",
-      icon: "fa-twitter",
-      url: "https://twitter.com/"
+      label: "X (Twitter)",
+      icon: "fa-brands fa-x-twitter",
+      url: "https://x.com/shaileshpsat"
     }
   ],
   profile: [
